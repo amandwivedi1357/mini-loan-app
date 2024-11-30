@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT } from './types';
 
-const BASE_URL = 'http://localhost:5000'
+const BASE_URL = 'https://mini-loan-app-navy.vercel.app'
 
 export const login = (email, password) => async (dispatch) => {
   dispatch({ type: LOGIN_REQUEST });
