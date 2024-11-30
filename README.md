@@ -4,6 +4,13 @@
 
 You can access the deployed version of the app at [https://loan-app-black.vercel.app/](https://loan-app-black.vercel.app/).
 
+## Admin Panel Access
+
+To access the admin panel, use the following credentials:
+
+- **Email**: `admin@gmail.com`
+- **Password**: `1234`
+
 ## Overview
 
 This project consists of a frontend and a backend. The frontend is built using React and Vite, while the backend is built using Node.js and Express.
