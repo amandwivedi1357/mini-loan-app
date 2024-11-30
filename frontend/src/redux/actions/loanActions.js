@@ -8,7 +8,7 @@ import {
   CREATE_LOAN_FAILURE,
   UPDATE_LOAN_STATUS
 } from './types';
-const BASE_URL = 'http://localhost:5000'
+const BASE_URL = 'https://mini-loan-app-navy.vercel.app'
 export const fetchLoans = () => async (dispatch) => {
   dispatch({ type: FETCH_LOANS_REQUEST });
   try {
