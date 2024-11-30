@@ -1,8 +1,7 @@
-import { legacy_createStore, applyMiddleware, combineReducers } from 'redux';
+import { legacy_createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import {thunk} from 'redux-thunk';
-import { composeWithDevTools } from 'redux-devtools-extension';
 import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage'; // Uses localStorage
+import storage from 'redux-persist/lib/storage'; 
 
 import authReducer from './reducers/authReducer';
 import loanReducer from './reducers/loanReducer';
@@ -18,10 +17,10 @@ const rootReducer = combineReducers({
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
-
+const composer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = legacy_createStore(
   persistedReducer,
-  composeWithDevTools(applyMiddleware(thunk))
+  composer(applyMiddleware(thunk))
 );
 
 const persistor = persistStore(store);
