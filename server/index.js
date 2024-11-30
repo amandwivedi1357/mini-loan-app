@@ -11,25 +11,29 @@ dotenv.config();
 
 const app = express();
 
-// Security middleware
+
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-// Apply rate limiting to all routes
+
 app.use(apiLimiter);
 
-// Routes
+app.get('/',(req,res)=>{
+  res.json({  message: 'Welcome to the mini loan app API'
+  })
+  })
+
 app.use('/api/auth', authRoutes);
 app.use('/api/loans', loanRoutes);
 
-// Error handling middleware
+
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ message: 'Something went wrong!' });
 });
 
-// Connect to database
+
 connectDB();
 
 const PORT = process.env.PORT || 5000;
