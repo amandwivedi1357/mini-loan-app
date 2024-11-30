@@ -1,5 +1,9 @@
 # Mini Loan App
 
+## Deployed Version
+
+You can access the deployed version of the app at [https://loan-app-black.vercel.app/](https://loan-app-black.vercel.app/).
+
 ## Overview
 
 This project consists of a frontend and a backend. The frontend is built using React and Vite, while the backend is built using Node.js and Express.
@@ -182,3 +186,6 @@ const loanSchema = new mongoose.Schema({
   - `status`: Current status of the loan (default is 'PENDING').
   - `repayments`: Array of repayment objects containing amount, due date, and status.
 
+## License
+
+This project is licensed under the ISC License.
