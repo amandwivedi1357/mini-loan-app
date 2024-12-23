@@ -12,7 +12,7 @@ dotenv.config();
 const app = express();
 
 
-const allowedOrigins = ['http://localhost:5173', 'https://mini-loan-app-navy.vercel.app'];
+const allowedOrigins = ['http://localhost:5173', 'https://loan-app-black.vercel.app'];
 
 const corsOptions = {
   origin: function (origin, callback) {
