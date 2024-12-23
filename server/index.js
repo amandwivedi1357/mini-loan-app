@@ -11,22 +11,22 @@ dotenv.config();
 
 const app = express();
 
-// Define allowed origins
-const allowedOrigins = ['http://localhost:5173', 'https://your-frontend-deployed-url.com'];
+
+const allowedOrigins = ['http://localhost:5173', 'https://mini-loan-app-navy.vercel.app'];
 
 const corsOptions = {
   origin: function (origin, callback) {
-    // Allow requests with no origin (e.g., mobile apps or curl)
+
     if (!origin || allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
     }
   },
-  credentials: true, // Allow cookies or credentials if needed
+  credentials: true, 
 };
 
-app.use(cors(corsOptions)); // Use CORS with the options
+app.use(cors(corsOptions)); 
 app.use(helmet());
 app.use(express.json());
 app.use(apiLimiter);
