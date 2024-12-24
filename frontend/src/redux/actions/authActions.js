@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT } from './types';
 
-//const BASE_URL = 'https://mini-loan-app123--mauve.vercel.app/'
- const BASE_URL = 'https://mini-loan-app-navy.vercel.app'
+const BASE_URL = 'https://loan-server-three.vercel.app'
+ //const BASE_URL = 'https://mini-loan-app-navy.vercel.app'
 
 export const login = (email, password) => async (dispatch) => {
   dispatch({ type: LOGIN_REQUEST });
