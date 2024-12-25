@@ -8,7 +8,7 @@ import { DollarSign, Calendar, CheckCircle } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 //const BASE_URL = 'https://mini-loan-app-navy.vercel.app'
-const BASE_URL = 'http://localhost:5000'
+const BASE_URL = 'https://mini-loan-app-eight.vercel.app'
 const LoanDetails = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
