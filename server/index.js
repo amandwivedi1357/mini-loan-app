@@ -6,27 +6,20 @@ import connectDB from './config/db.js';
 import authRoutes from './routes/authRoutes.js';
 import loanRoutes from './routes/loanRoutes.js';
 import { apiLimiter } from './middleware/rateLimiter.js';
+import bodyParser from 'body-parser';
 
 dotenv.config();
 
 const app = express();
 
-
-const allowedOrigins = ['http://localhost:5173', 'https://loan-app-black.vercel.app'];
-
+app.use(bodyParser.json());
 const corsOptions = {
-  origin: function (origin, callback) {
-
-    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true, 
+    origin: ['https://loan-app-black.vercel.app', 'http://localhost:5173'], 
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+    credentials: true 
 };
+app.use(cors(corsOptions));
 
-app.use(cors(corsOptions)); 
 app.use(helmet());
 app.use(express.json());
 app.use(apiLimiter);
