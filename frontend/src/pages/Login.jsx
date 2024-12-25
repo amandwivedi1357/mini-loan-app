@@ -14,12 +14,21 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
     try {
       await dispatch(login(email, password));
-      toast.success('Login successful!');
-      navigate('/');
+      
+      // Optionally, you can add an additional check if needed
+      if (!error) {
+        toast.success('Login successful!');
+        navigate('/');
+      } else {
+        toast.error(error || 'Login failed');
+      }
     } catch (err) {
-      toast.error(error || 'Login failed');
+      // This will catch network errors or other unexpected issues
+      const errorMessage = err.response?.data?.message || 'An unexpected error occurred';
+      toast.error(errorMessage);
     }
   };
 
