@@ -14,11 +14,7 @@ const app = express();
 
 app.use(bodyParser.json());
 const corsOptions = {
-  origin: [
-    'https://loan-app-black.vercel.app', 
-    'http://localhost:5173', 
-    'https://mini-loan-app-eight.vercel.app'
-  ], 
+  origin: "*", 
   methods: ['GET', 'POST', 'PUT', 'DELETE'], 
   credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization'],
